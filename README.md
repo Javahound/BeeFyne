@@ -15,7 +15,7 @@ Clone this repo to your local drive. After that navigate into the src/ directory
 - Basic Knowledge about Javascript / Typescript
 
 ## Environment Variables needed
-- TYPEORM_CONNECTION=
+- TYPEORM_CONNECTION=[TYPE OF DB (mysql, postgres, etc...)]
 - TYPEORM_HOST=
 - TYPEORM_USERNAME=
 - TYPEORM_PASSWORD=
