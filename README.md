@@ -26,3 +26,4 @@ Clone this repo to your local drive. After that navigate into the src/ directory
 - DISCORDTOKEN=
 - CLIENTID=
 - GUILDID=
+- SENDDEBUGDMS=

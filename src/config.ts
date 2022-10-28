@@ -14,6 +14,7 @@ export const getEnvironmentConfig = () => {
         discordToken: yup.string().required(),
         clientId: yup.string().required(),
         guildId: yup.string().required(),
+        debugDMs: yup.bool().required(),
     })
 
     const unverifiedEnvironmentConfig = {
@@ -27,6 +28,7 @@ export const getEnvironmentConfig = () => {
         discordToken: process.env.DISCORDTOKEN,
         clientId: process.env.CLIENTID,
         guildId: process.env.GUILDID,
+        debugDMs: process.env.SENDDEBUGDMS,
     }
 
     logger.info('Validating Connection Config')

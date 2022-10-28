@@ -13,4 +13,7 @@ export class GuildConfiguration {
 
     @Column({ name: 'welcome_chanel_id' })
     welcomeChannelId: string = '0'
+
+    @Column({ unique: false, name: 'guild_admin_user_id'})
+    adminId: string = '0'
 }

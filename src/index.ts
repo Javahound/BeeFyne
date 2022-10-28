@@ -1,4 +1,4 @@
-import { Intents, Collection } from 'discord.js'
+import { Intents, Collection, Guild } from 'discord.js'
 import { DataSource } from 'typeorm'
 import { GuildConfiguration } from './typeorm/entities/GuildConfiguration'
 import 'reflect-metadata'
@@ -9,10 +9,6 @@ import registerEvents from './utils/RegisterEvents'
 import registerModules from './utils/RegisterModules'
 
 const allIntents = new Intents(32767)
-
-// const client = new DiscordClient({
-//     intents: allIntents,
-// })
 
 export const client = new DiscordClient({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -44,7 +40,6 @@ export const AppDataSource = new DataSource({
 
     client.configs = configs
     console.log(client.configs)
-
     await client.login(environmentConfig.discordToken)
 
     // after client login, because modules use the client in their startups
@@ -53,19 +48,10 @@ export const AppDataSource = new DataSource({
 
 client.once('ready', () => {
     console.log('client ready')
-
-    // const guildId = '988571142283489312'
-    // const guild = client.guilds.cache.get(guildId)
-    // let commands
-
-    // if(guild) {
-    //     commands = guild.commands
-    // } else {
-    //     commands = client.application?.commands
-    // }
-
-    // commands?.create({
-    //     name: 'test',
-    //     description: 'test command',
-    // })
+    if(environmentConfig.debugDMs) {
+        const src = AppDataSource.getRepository(GuildConfiguration)
+        const guildConf = src.find()
+        const conf = new Collection<string, GuildConfiguration>()
+        
+    }
 })
