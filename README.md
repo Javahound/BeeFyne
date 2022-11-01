@@ -15,6 +15,8 @@ Clone this repo to your local drive. After that navigate into the src/ directory
 - Basic Knowledge about Javascript / Typescript
 
 ## Environment Variables needed
+.env file is in Repo as .gitignore was ignored I guess. Variables are Garbage Data as the token was changed in the meantime.
+
 - TYPEORM_CONNECTION=[TYPE OF DB (mysql, postgres, etc...)]
 - TYPEORM_HOST=
 - TYPEORM_USERNAME=
