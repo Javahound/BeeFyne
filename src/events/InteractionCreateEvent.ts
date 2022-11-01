@@ -5,6 +5,8 @@ import logger from '../log'
 import { AppDataSource } from '../index'
 import { SelfRolesGroupsConfiguration } from '../typeorm/entities/SelfRolesGroupsConfiguration'
 import { SelfRolesRole } from '../typeorm/entities/SelfRolesRole'
+import { ReceiveStatusUpdates } from '../typeorm/entities/StatusUpdates'
+import { GuildConfiguration } from '../typeorm/entities/GuildConfiguration'
 
 export default abstract class InteractionCreateEvent extends BaseEvent {
     constructor() {
